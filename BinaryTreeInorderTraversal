@@ -1,0 +1,12 @@
+class Solution(object):
+    def inorderTraversal(self, root):
+        a=[]
+        stack=[]
+        while root or stack:
+            while root:
+                stack.append(root)
+                root=root.left
+            root=stack.pop()
+            a.append(root.val)
+            root=root.right
+        return a
