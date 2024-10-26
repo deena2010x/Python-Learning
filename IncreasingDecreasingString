@@ -1,0 +1,9 @@
+class Solution:
+  def sortString(self, s: str) -> str:
+    arr=[]
+    count=collections.Counter(s)
+    while count:
+      for char in string.ascii_lowercase,reversed(string.ascii_lowercase):
+        arr+=[c for c in char if c in count]
+        count-=dict.fromkeys(count,1)
+    return ''.join(arr)
