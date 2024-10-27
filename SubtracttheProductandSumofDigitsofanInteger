@@ -1,0 +1,13 @@
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        string=str(n)
+        length=len(string)
+        product1=1
+        sum1=0
+        for i in range(length):
+            string1=string[i]
+            integer=int(string1)
+            product1*=integer
+            sum1+=integer
+        result=product1-sum1
+        return result
