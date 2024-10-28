@@ -1,0 +1,12 @@
+class Solution:
+    def isPrefixOfWord(self, sentence: str, searchWord: str) -> int:
+        arr=list(sentence.split(' '))
+        length=len(arr)
+        length1=len(searchWord)
+        for i in range(length):
+            word=arr[i]
+            length2=len(word)
+            for j in range(length2):
+                if searchWord==word[:length1]:
+                    return i+1
+        return -1
