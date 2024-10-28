@@ -1,0 +1,16 @@
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        length=len(nums)
+        length1=int(length/2)
+        arr=[]
+        even=1
+        odd=length1
+        arr.append(nums[0])
+        for i in range(1,length):
+            if i%2==0:
+                arr.append(nums[even])
+                even+=1
+            else:
+                arr.append(nums[odd])
+                odd+=1
+        return arr
