@@ -1,0 +1,8 @@
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        count=collections.Counter(arr)
+        count1=list(count.values())
+        length=len(count1)
+        set1=set(count1)
+        length1=len(set1)
+        return length==length1
