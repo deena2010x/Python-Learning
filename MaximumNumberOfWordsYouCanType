@@ -1,0 +1,10 @@
+class Solution:
+    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
+        arr=text.split(' ')
+        length=len(arr)
+        for i in arr:
+            for j in brokenLetters:
+                if j in i:
+                    length-=1
+                    break
+        return length
