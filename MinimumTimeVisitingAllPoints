@@ -1,0 +1,16 @@
+class Solution:
+    def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
+        length=len(points)
+        count=0
+        for i in range(0,length-1):
+            point1=points[i]
+            x1=point1[0]
+            y1=point1[1]
+            point2=points[i+1]
+            x2=point2[0]
+            y2=point2[1]
+            x3=abs(x1-x2)
+            y3=abs(y1-y2)
+            count1=max(x3,y3)
+            count+=count1
+        return count
