@@ -1,0 +1,16 @@
+class Solution:
+    def finalPrices(self, prices: List[int]) -> List[int]:
+        length=len(prices)
+        arr=[]
+        for i in range(length):
+            discount=False
+            for j in range(i+1,length):
+                if prices[j]<=prices[i]:
+                    price=prices[i]-prices[j]
+                    arr.append(price)
+                    discount=True
+                    break
+            if not discount:  
+                price=prices[i] 
+                arr.append(price)
+        return arr
