@@ -1,0 +1,10 @@
+class Solution:
+    def arrayRankTransform(self, arr: List[int]) -> List[int]:
+        arr1=[]
+        arr1=sorted(arr)
+        rank={}
+        for i in arr1:
+            if i not in rank:
+                rank[i]=len(rank)+1
+        rank1=list(map(rank.get, arr))
+        return rank1
