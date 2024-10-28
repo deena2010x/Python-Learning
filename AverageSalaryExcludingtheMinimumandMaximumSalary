@@ -1,0 +1,19 @@
+class Solution:
+    def average(self, salary: List[int]) -> float:
+        minimum=math.inf
+        maximum=0
+        length=len(salary)
+        for i in range(length):
+            salary1=salary[i]
+            if salary1<minimum:
+                minimum=salary1
+            if salary1>maximum:
+                maximum=salary1
+        salary.remove(minimum)
+        salary.remove(maximum)
+        sum1=0
+        for i in range(length-2):
+            salary1=salary[i]
+            sum1+=salary1
+        average=sum1/(length-2)
+        return round(average,5)
