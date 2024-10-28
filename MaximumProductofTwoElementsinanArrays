@@ -1,0 +1,10 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        length=len(nums)
+        max1=0
+        for i in range(length):
+            for j in range(i+1,length):
+                product=(nums[i]-1)*(nums[j]-1)
+                if product>max1:
+                    max1=product
+        return max1
