@@ -1,0 +1,14 @@
+class Solution:
+    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+        arr.sort()
+        minimum=math.inf
+        result=[]
+        for i,j in itertools.pairwise(arr):
+            difference=j-i
+            if difference<minimum:
+                minimum=difference
+        for i,j in itertools.pairwise(arr):
+            difference=j-i
+            if difference==minimum:
+                result.append([i,j])
+        return result
