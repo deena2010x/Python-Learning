@@ -1,0 +1,16 @@
+class Solution:
+    def reorderSpaces(self, text: str) -> str:
+        length1=len(text)
+        words=text.split()
+        length2=0
+        for i in words:
+            length2+=len(i)
+        count=length1-length2
+        if len(words)==1:
+            count1=0
+            count2=count
+        else:
+            count1=int(count/(len(words)-1))
+            count2=count%(len(words)-1)
+        string=(' '*count1).join(words)+' '*count2
+        return string
