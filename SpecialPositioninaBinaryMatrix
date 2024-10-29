@@ -1,0 +1,12 @@
+class Solution:
+    def numSpecial(self, mat: List[List[int]]) -> int:
+        length1=len(mat)
+        length2=len(mat[0])
+        count=0
+        for i in range(length1):
+            for j in range(length2):
+                if mat[i][j]==1:
+                    if all(mat[i][k]==0 for k in range(length2) if k!=j):
+                        if all(mat[k][j]==0 for k in range(length1) if k!=i):
+                            count+=1
+        return count
