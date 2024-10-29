@@ -1,0 +1,8 @@
+class Solution:
+    def findLucky(self, arr: List[int]) -> int:
+        arr1=collections.Counter(arr)
+        lucky=-1
+        for i in arr1:
+            if i==arr1[i]:
+                lucky=max(lucky,arr1[i])
+        return lucky
