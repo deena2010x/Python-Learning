@@ -1,0 +1,11 @@
+class Solution:
+    def modifyString(self, s: str) -> str:
+        s=list(s)
+        length=len(s)
+        for i in range(length):
+            if s[i]=='?':
+                for j in 'abcdefghijklmnopqrstuvwxyz':
+                    if (i==0 or s[i-1]!=j) and (i==length-1 or s[i+1]!=j):
+                        s[i]=j
+                        break
+        return ''.join(s)
