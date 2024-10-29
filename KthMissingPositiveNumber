@@ -1,0 +1,14 @@
+from typing import List
+
+class Solution:
+    def findKthPositive(self, arr: List[int], k: int) -> int:
+        arr1=[]
+        i=1
+        index=0
+        while len(arr1)<k:
+            if index<len(arr) and arr[index]==i:
+                index+=1
+            else:
+                arr1.append(i)
+            i+=1
+        return arr1[-1]
