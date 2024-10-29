@@ -1,0 +1,12 @@
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        length=len(candies)
+        arr=[]
+        for i in range(length):
+            candies[i]+=extraCandies
+            if max(candies)==candies[i]:
+                arr.append(True)
+                candies[i]-=extraCandies
+            else:
+                arr.append(False)
+        return arr
