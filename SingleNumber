@@ -1,0 +1,9 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        arr=collections.Counter(nums)
+        for i in arr.values():
+            if i==1:
+                for j in arr.keys():
+                    if arr[j]==i:
+                        return j
+        return -1
