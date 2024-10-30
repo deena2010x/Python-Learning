@@ -1,0 +1,8 @@
+class Solution:
+    def hasAlternatingBits(self, n: int) -> bool:
+        binary=format(n,'b')
+        length=len(binary)
+        for i in range(length-1):
+            if binary[i]==binary[i+1]:
+                return False
+        return True
