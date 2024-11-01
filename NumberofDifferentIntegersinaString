@@ -1,0 +1,11 @@
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        for i in word:
+            if i.isalpha():
+                word=word.replace(i,' ')
+        arr=word.split()
+        length=len(arr)
+        for i in range(length):
+            arr[i]=arr[i].lstrip('0')
+        arr1=set(arr)
+        return len(arr1)
