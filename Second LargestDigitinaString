@@ -1,0 +1,12 @@
+class Solution:
+    def secondHighest(self, s: str) -> int:
+        arr=[]
+        for i in s:
+            if i.isdigit():
+                arr.append(int(i))
+        arr1=set(arr)
+        arr2=sorted(arr1)
+        length=len(arr2)
+        if length>=2:
+            return int(arr2[-2])
+        return -1
