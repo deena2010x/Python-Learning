@@ -1,0 +1,6 @@
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        for i in s:
+            if i.isupper():
+               s=s.replace(i,i.lower())
+        return s
