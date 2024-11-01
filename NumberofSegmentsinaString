@@ -1,0 +1,8 @@
+class Solution:
+    def countSegments(self, s: str) -> int:
+        arr=[]
+        for i in s.split(' '):
+            if i:
+                arr.append(i)
+        length=len(arr)
+        return length
