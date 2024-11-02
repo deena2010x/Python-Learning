@@ -1,0 +1,7 @@
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        arr=collections.Counter(sentence)
+        for i in 'abcdefghijklmnopqrstuvwxyz':
+            if arr[i]==0:
+                return False
+        return True
