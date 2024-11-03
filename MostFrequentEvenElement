@@ -1,0 +1,11 @@
+class Solution:
+    def mostFrequentEven(self, nums: List[int]) -> int:
+        arr=collections.Counter(nums)
+        max1=-1
+        result=-1
+        for i in arr:
+            if i%2==0:
+                if arr[i]>max1 or (arr[i]==max1 and i<result):
+                    max1=arr[i]
+                    result=i
+        return result
