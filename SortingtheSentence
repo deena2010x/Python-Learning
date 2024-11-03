@@ -1,0 +1,10 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        arr=s.split()
+        length=len(arr)
+        arr1=[0]*length
+        for i in arr:
+            length1=len(i)
+            index=int(i[-1])-1
+            arr1[index]=i[0:length1-1]
+        return ' '.join(arr1)
