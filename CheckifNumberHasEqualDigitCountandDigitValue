@@ -1,0 +1,9 @@
+class Solution:
+    def digitCount(self, num: str) -> bool:
+        length=len(num)
+        arr=collections.Counter(num)
+        for i in range(length):
+            digit=int(num[i])
+            if arr[str(i)]!=digit:
+                return False
+        return True
