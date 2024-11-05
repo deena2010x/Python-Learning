@@ -1,0 +1,17 @@
+class Solution:
+    def bestHand(self, ranks: List[int], suits: List[str]) -> str:
+        arr1=collections.Counter(ranks)
+        arr2=collections.Counter(suits)
+        count=0
+        pair=False
+        for i in arr2.values():
+            if i==5:
+                return "Flush"
+        for i in arr1.values():
+            if i>=3:
+                return "Three of a Kind"
+            elif i==2:
+                pair=True
+        if pair:
+            return "Pair"
+        return "High Card"  
