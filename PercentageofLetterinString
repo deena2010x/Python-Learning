@@ -1,0 +1,8 @@
+class Solution:
+    def percentageLetter(self, s: str, letter: str) -> int:
+        arr=collections.Counter(s)
+        sum1=0
+        for i in arr.values():
+            sum1+=i
+        percentage=int(arr[letter]*100/sum1)
+        return percentage
