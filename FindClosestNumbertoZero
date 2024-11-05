@@ -1,0 +1,9 @@
+class Solution:
+    def findClosestNumber(self, nums: List[int]) -> int:
+        min1=math.inf
+        min2=math.inf
+        for i in nums:
+            if abs(i)<min1 or (abs(i)==min1 and i>min2):
+                min1=abs(i)
+                min2=i
+        return min2
