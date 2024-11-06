@@ -1,0 +1,10 @@
+class Solution:
+    def largestGoodInteger(self, num: str) -> str:
+        string=str(num)
+        nums=["000","111","222","333","444","555","666","777","888","999"]
+        max1=""
+        for i in nums:
+            if i in string:
+                if i>max1:
+                    max1=i
+        return max1
