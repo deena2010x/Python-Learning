@@ -1,0 +1,10 @@
+class Solution:
+    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
+        length=len(nums)
+        count=0
+        for i in range(length):
+            for j in range(i,length):
+                for k in range(j,length):
+                    if nums[j]-nums[i]==diff and nums[k]-nums[j]==diff:
+                        count+=1
+        return count
