@@ -1,0 +1,10 @@
+class Solution:
+    def numberOfPairs(self, nums: List[int]) -> List[int]:
+        length=len(nums)
+        answer=[0,length]
+        arr=collections.Counter(nums)
+        for i in arr.values():
+            if i>=2:
+                answer[0]+=int(i/2)
+                answer[1]-=(i-int(i%2))        
+        return answer
