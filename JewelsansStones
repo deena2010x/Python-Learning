@@ -1,0 +1,8 @@
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        arr=collections.Counter(stones)
+        count=0
+        for i in jewels:
+            if i in arr:
+                count+=arr[i]
+        return count
