@@ -1,0 +1,10 @@
+class Solution:
+    def arrayRankTransform(self, arr: List[int]) -> List[int]:
+        arr1=sorted(set(arr))
+        arr2=[]
+        dict1={}
+        for rank,num in enumerate(arr1):
+            dict1[num]=rank+1
+        for i in arr:
+            arr2.append(dict1[i])
+        return arr2
