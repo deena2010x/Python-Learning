@@ -1,0 +1,14 @@
+class Solution:
+    def diStringMatch(self, s: str) -> List[int]:
+        length=len(s)
+        arr=[0]*(length+1)
+        low,high=0,length
+        for i in range(length):
+            if s[i]=='I':
+                arr[i]=low
+                low+=1
+            elif s[i]=='D':
+                arr[i]=high
+                high-=1
+        arr[length]=low  
+        return arr
