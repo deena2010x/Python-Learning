@@ -1,0 +1,21 @@
+class Solution:
+    def reformatNumber(self, number: str) -> str:
+        string=''
+        for i in number:
+            if i.isalnum():
+                string+=i
+        length=len(string)
+        i=length
+        string1=''
+        while(i>4 or i==3):
+            string1+=string[length-i:length-i+3]
+            if i!=3:
+                string1+='-'
+            i-=3
+        if i==4:
+            string1+=string[length-4:length-2]
+            string1+='-'
+            string1+=string[length-2:length]
+        elif i==2:
+            string1+=string[length-2:length]
+        return string1
