@@ -1,0 +1,13 @@
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        result=0
+        n1=int(n/7)
+        n2=n%7
+        x=1
+        for i in range(n1):
+            for j in range(0,7):
+                result+=(j+x)
+            x+=1
+        for i in range(n2):
+            result+=(i+x)
+        return result
