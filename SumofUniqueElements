@@ -1,0 +1,8 @@
+class Solution:
+    def sumOfUnique(self, nums: List[int]) -> int:
+        arr=collections.Counter(nums)
+        sum1=0
+        for i,j in arr.items():
+            if j==1:
+                sum1+=i
+        return sum1
