@@ -1,0 +1,9 @@
+class Solution:
+    def greatestLetter(self, s: str) -> str:
+        max1=''
+        for i in s:
+            if i.islower():
+                if i.upper() in s:
+                    if i>max1:
+                        max1=i
+        return max1.upper()
