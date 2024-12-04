@@ -1,0 +1,8 @@
+class Solution:
+    def findSpecialInteger(self, arr: List[int]) -> int:
+        length=len(arr)
+        arr1=collections.Counter(arr)
+        for i,j in arr1.items():
+            if j/length>0.25:
+                return i
+        return 0
