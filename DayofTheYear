@@ -1,0 +1,11 @@
+class Solution:
+    def dayOfYear(self, date: str) -> int:
+        y,m,d=map(int,date.split('-'))
+        count=0
+        arr=[31,28,31,30,31,30,31,31,30,31,30,31]
+        count=sum(arr[:m-1])
+        count+=d
+        if(y%4==0 and y%100!=0) or (y%400==0):
+            if m>2:
+                count+=1
+        return count
