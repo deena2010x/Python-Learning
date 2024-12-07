@@ -1,0 +1,14 @@
+class Solution:
+    def reformatDate(self, date: str) -> str:
+        arr=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        d,m,y=date.split(' ')
+        length1=len(d)
+        if length1==3:
+            d='0'+d
+            length1=len(d)
+        m1=str(1+arr.index(m))
+        length2=len(m1)
+        if length2==1:
+            m1='0'+m1
+        string=y+'-'+m1+'-'+d[0:length1-2]
+        return string
