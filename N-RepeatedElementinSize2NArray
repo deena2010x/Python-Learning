@@ -1,0 +1,9 @@
+class Solution:
+    def repeatedNTimes(self, nums: List[int]) -> int:
+        length=len(nums)
+        n=int(length/2)
+        arr=collections.Counter(nums)
+        for i,j in arr.items():
+            if j==n:
+                return i
+        return 0
