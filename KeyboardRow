@@ -1,0 +1,22 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        arr=[]
+        s1="qwertyuiop"
+        s2="asdfghjkl"
+        s3="zxcvbnm"
+        for i in words:
+            c1=0
+            c2=0
+            c3=0
+            length=len(i)
+            for j in i:
+                j=j.lower()
+                if j in s1:
+                    c1+=1
+                elif j in s2:
+                    c2+=1
+                elif j in s3:
+                    c3+=1
+            if c1==length or c2==length or c3==length:
+                arr.append(i)
+        return arr
