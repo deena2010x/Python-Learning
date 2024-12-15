@@ -1,0 +1,11 @@
+class Solution:
+    def findComplement(self, num: int) -> int:
+        binary=format(num,'b')
+        binary1=''
+        for i in binary:
+            if i=='1':
+                binary1+='0'
+            elif i=='0':
+                binary1+='1'
+        integer=int(binary1,2)
+        return integer
