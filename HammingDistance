@@ -1,0 +1,19 @@
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        binary1=format(x,'b')
+        binary2=format(y,'b')
+        count=0
+        length1=len(binary1)
+        length2=len(binary2)
+        if length1>length2:
+            binary2='0'*(length1-length2)+binary2
+            length=length1
+        elif length2>length1:
+            binary1='0'*(length2-length1)+binary1
+            length=length2
+        else:
+            length=length1
+        for i in range(length):
+            if binary1[i]!=binary2[i]:
+                    count+=1
+        return count
