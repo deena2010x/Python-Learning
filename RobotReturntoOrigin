@@ -1,0 +1,6 @@
+class Solution:
+    def judgeCircle(self, moves: str) -> bool:
+        arr=collections.Counter(moves)
+        if arr['U']==arr['D'] and arr['L']==arr['R']:
+            return True
+        return False
