@@ -1,0 +1,10 @@
+class Solution:
+    def distributeCandies(self, candyType: List[int]) -> int:
+        length=len(candyType)
+        n1=int(length/2)
+        count=0
+        arr=collections.Counter(candyType)
+        for i in arr.values():
+            count+=1
+        count=min(count,n1)
+        return count
