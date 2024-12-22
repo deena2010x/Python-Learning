@@ -1,0 +1,20 @@
+class Solution:
+    def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
+        s1=''
+        for i in firstWord:
+            i=ord(i)-ord('a')
+            s1+=str(i)
+        x1=int(s1)
+        s1=''
+        for i in secondWord:
+            i=ord(i)-ord('a')
+            s1+=str(i)
+        x2=int(s1)
+        s1=''
+        for i in targetWord:
+            i=ord(i)-ord('a')
+            s1+=str(i)
+        x3=int(s1)
+        if x1+x2==x3:
+            return True
+        return False
