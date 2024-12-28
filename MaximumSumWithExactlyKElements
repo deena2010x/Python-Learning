@@ -1,0 +1,7 @@
+class Solution:
+    def maximizeSum(self, nums: List[int], k: int) -> int:
+        sum1=0
+        max1=max(nums)
+        for i in range(k):
+            sum1+=max1+i
+        return sum1
