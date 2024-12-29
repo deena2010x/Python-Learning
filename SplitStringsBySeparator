@@ -1,0 +1,9 @@
+class Solution:
+    def splitWordsBySeparator(self, words: List[str], separator: str) -> List[str]:
+        arr=[]
+        for i in words:
+            arr1=i.split(separator)
+            for j in arr1:
+                if j!='':
+                    arr.append(j)
+        return arr
