@@ -1,0 +1,17 @@
+class Solution:
+    def isFascinating(self, n: int) -> bool:
+        x1=2*n
+        x2=3*n
+        string1=str(x1)
+        string2=str(x2)
+        string3=str(n)
+        string=string3+string1+string2
+        length=len(string)
+        if length!=9:
+            return False
+        arr=collections.Counter(string)
+        nums='123456789'
+        for i in nums:
+            if arr[i]!=1:
+                return False
+        return True
