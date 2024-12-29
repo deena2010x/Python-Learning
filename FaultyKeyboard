@@ -1,0 +1,10 @@
+class Solution:
+    def finalString(self, s: str) -> str:
+        length=len(s)
+        s1=''
+        for i in range(length):
+            if s[i]=='i':
+                s1=s1[::-1]
+            else: 
+                s1+=s[i]
+        return s1
