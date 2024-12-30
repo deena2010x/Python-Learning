@@ -1,0 +1,19 @@
+class Solution:
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        string=str(purchaseAmount)
+        string=list(string)
+        length=len(string)
+        if length==1:
+            if purchaseAmount<5:
+                roundedAmount=0
+            else:
+                roundedAmount=10
+        else:
+            if int(string[1])<5:
+                string[1]='0'
+            else:
+                string[0]=str(int(string[0])+1)
+                string[1]='0'
+            roundedAmount=int(''.join(string))
+        final=100-roundedAmount
+        return final
