@@ -1,0 +1,6 @@
+class Solution:
+    def maximumOddBinaryNumber(self, s: str) -> str:
+        arr=collections.Counter(s)
+        for i,j in arr.items():
+            s1='1'*(arr['1']-1)+'0'*arr['0']+'1'
+        return s1
