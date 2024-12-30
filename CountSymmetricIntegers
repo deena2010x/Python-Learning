@@ -1,0 +1,16 @@
+class Solution:
+    def countSymmetricIntegers(self, low: int, high: int) -> int:
+        count=0
+        for i in range(low,high+1):
+            string=str(i)
+            length=len(string)
+            if length%2==0:
+                sum1=0
+                sum2=0
+                for i in range(int(length/2)):
+                    sum1+=int(string[i])
+                for i in range(int(length/2),length):
+                    sum2+=int(string[i])
+                if sum1==sum2:
+                    count+=1
+        return count
