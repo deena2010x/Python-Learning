@@ -1,0 +1,8 @@
+class Solution:
+    def findNonMinOrMax(self, nums: List[int]) -> int:
+        min1=min(nums)
+        max1=max(nums)
+        for i in nums:
+            if i!=min1 and i!=max1:
+                return i
+        return -1
