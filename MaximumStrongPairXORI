@@ -1,0 +1,10 @@
+class Solution:
+    def maximumStrongPairXor(self, nums: List[int]) -> int:
+        max1=0
+        for x in nums:
+            for y in nums:
+                if abs(x-y)<=min(x,y):
+                    x1=xor(x,y)
+                    if x1>max1:
+                        max1=x1
+        return max1
