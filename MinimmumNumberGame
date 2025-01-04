@@ -1,0 +1,14 @@
+class Solution:
+    def numberGame(self, nums: List[int]) -> List[int]:
+        length=len(nums)
+        count=length
+        arr=[]
+        while count>1:
+            min1=min(nums)
+            nums.remove(min1)
+            min2=min(nums)
+            nums.remove(min2)
+            arr.append(min2)
+            arr.append(min1)
+            count-=2
+        return arr
