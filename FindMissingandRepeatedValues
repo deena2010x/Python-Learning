@@ -1,0 +1,15 @@
+class Solution:
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        arr=[]
+        for i in grid:
+            arr+=i
+        arr1=collections.Counter(arr)
+        arr2=[]
+        for i,j in arr1.items():
+            if j==2:
+                arr2.append(i)
+        length=len(arr)
+        for i in range(1,length+1):
+            if i not in arr:
+                arr2.append(i)
+        return arr2
