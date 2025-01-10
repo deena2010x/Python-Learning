@@ -1,0 +1,10 @@
+class Solution:
+    def minimumCost(self, nums: List[int]) -> int:
+        count=nums[0]
+        nums.remove(count)
+        min1=min(nums)
+        count+=min1
+        nums.remove(min1)
+        min2=min(nums)
+        count+=min2
+        return count
