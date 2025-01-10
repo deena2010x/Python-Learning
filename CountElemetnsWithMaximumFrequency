@@ -1,0 +1,12 @@
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
+        arr=collections.Counter(nums)
+        max1=0
+        for i in arr.values():
+            if i>max1:
+                max1=i
+        sum1=0
+        for i in arr.values():
+            if i==max1:
+                sum1+=i
+        return sum1
