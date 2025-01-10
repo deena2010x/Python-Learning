@@ -1,0 +1,12 @@
+class Solution:
+    def incremovableSubarrayCount(self, nums: List[int]) -> int:
+        length=len(nums)
+        count=0
+        for i in range(length):
+            for j in range(i+1,length+1):
+                nums1=nums[:i]+nums[j:]
+                nums2=sorted(nums1)
+                nums3=sorted(set(nums1))
+                if nums2==nums1 and nums3==nums1:
+                    count+=1
+        return count
