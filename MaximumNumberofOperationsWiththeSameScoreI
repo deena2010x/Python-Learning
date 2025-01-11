@@ -1,0 +1,11 @@
+class Solution:
+    def maxOperations(self, nums: List[int]) -> int:
+        length=len(nums)
+        count=0
+        sum1=nums[0]+nums[1]
+        for i in range(0,length-1,2):
+            if nums[i]+nums[i+1]==sum1:
+                count+=1
+            else:
+                break
+        return count
