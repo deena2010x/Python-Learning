@@ -1,0 +1,13 @@
+class Solution:
+    def countPrefixSuffixPairs(self, words: List[str]) -> int:
+        length=len(words)
+        count=0
+        for i in range(length):
+            for j in range(i+1,length):
+                str1=words[i]
+                str2=words[j]
+                length1=len(str1)
+                length2=len(str2)
+                if str2[0:length1]==str1 and str2[length2-length1:length2]==str1:
+                    count+=1
+        return count
