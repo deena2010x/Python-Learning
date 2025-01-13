@@ -1,0 +1,7 @@
+class Solution:
+    def isPossibleToSplit(self, nums: List[int]) -> bool:
+        arr=collections.Counter(nums)
+        for i in arr.values():
+            if i>2:
+                return False
+        return True
