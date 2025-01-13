@@ -1,0 +1,12 @@
+class Solution:
+    def modifiedMatrix(self, matrix: List[List[int]]) -> List[List[int]]:
+        rows=len(matrix)
+        cols=len(matrix[0])
+        for i in range(rows):
+            for j in range(cols):
+                arr1=[]
+                if matrix[i][j]==-1:
+                    for k in range(rows):
+                        arr1.append(matrix[k][j])
+                    matrix[i][j]=max(arr1)
+        return matrix
