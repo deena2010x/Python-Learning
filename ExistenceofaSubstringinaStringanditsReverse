@@ -1,0 +1,9 @@
+class Solution:
+    def isSubstringPresent(self, s: str) -> bool:
+        length=len(s)
+        s1=s[::-1]
+        for i in range(length-1):
+            s2=s[i:i+2]
+            if s2 in s1:
+                return True
+        return False
