@@ -1,0 +1,17 @@
+class Solution:
+    def addedInteger(self, nums1: List[int], nums2: List[int]) -> int:
+        length=len(nums1)
+        nums1.sort()
+        nums2.sort()
+        nums=[]
+        for i in range(length):
+            x=nums2[i]-nums1[i]
+            nums.append(x)
+        arr=collections.Counter(nums)
+        arr1=[]
+        for i in arr.values():
+            arr1.append(i)
+        length1=len(arr1)
+        if length1==1:
+            return nums2[0]-nums1[0]
+        return 0
