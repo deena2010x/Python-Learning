@@ -1,0 +1,13 @@
+class Solution:
+    def numberOfSpecialChars(self, word: str) -> int:
+        length=len(word)
+        set1=set()
+        set2=set()
+        for i in word:
+            if i.islower():
+                set1.add(i)
+            else:
+                set2.add(i.lower())
+        set3=set1&set2
+        length1=len(set3)
+        return length1
