@@ -1,0 +1,11 @@
+class Solution:
+    def getEncryptedString(self, s: str, k: int) -> str:
+        length=len(s)
+        s1=[0]*length
+        k=k%length
+        for i in range(length):
+            if k+i<length:
+                s1[i]=s[k+i]
+            else:
+                s1[i]=s[k+i-length]
+        return ''.join(s1)
