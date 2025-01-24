@@ -1,0 +1,14 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        length=len(nums)
+        arr=[-1]*2
+        for i in range(length):
+            if nums[i]==target:
+                arr[0]=i
+                break
+        nums=sorted(nums,reverse=True)
+        for i in range(length):
+            if nums[i]==target:
+                arr[1]=length-i-1
+                break
+        return arr
