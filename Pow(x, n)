@@ -1,0 +1,4 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        x1=pow(x,n)
+        return x1
