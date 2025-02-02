@@ -1,0 +1,11 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        arr=collections.Counter(nums)
+        arr=dict(sorted(arr.items(),key=lambda item:item[1],reverse=True))
+        arr1=[]
+        count=0
+        for i,j in arr.items():
+            if count!=k:
+                arr1.append(i)
+                count+=1
+        return arr1
