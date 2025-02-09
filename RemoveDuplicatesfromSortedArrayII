@@ -1,0 +1,10 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        arr=collections.Counter(nums)
+        index=0
+        for i,j in arr.items():
+            x=min(j,2)
+            for k in range(x):
+                nums[index]=i
+                index+=1
+        return index
