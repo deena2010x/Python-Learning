@@ -1,0 +1,12 @@
+class Solution:
+    def maxDifference(self, s: str) -> int:
+        arr=collections.Counter(s)
+        min1=math.inf
+        max1=0
+        for i in arr.values():
+            if i%2==0:
+                min1=min(i,min1)
+            else:
+                max1=max(i,max1)
+        x=max1-min1
+        return x
