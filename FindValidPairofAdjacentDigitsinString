@@ -1,0 +1,9 @@
+class Solution:
+    def findValidPair(self, s: str) -> str:
+        arr=collections.Counter(s)
+        length=len(s)
+        for i in range(length-1):
+            if s[i]!=s[i+1]:
+                if int(s[i])==arr[s[i]] and int(s[i+1])==arr[s[i+1]]:  
+                    return s[i]+s[i+1]
+        return ""
