@@ -1,0 +1,9 @@
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        arr1=collections.Counter(nums1)
+        arr2=collections.Counter(nums2)
+        arr=[]
+        for i in arr1:
+            if i in arr2:
+                arr.extend([i]*min(arr1[i],arr2[i]))
+        return arr
