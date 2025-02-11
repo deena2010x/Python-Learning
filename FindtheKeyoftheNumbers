@@ -1,0 +1,23 @@
+class Solution:
+    def generateKey(self, num1: int, num2: int, num3: int) -> int:
+        str1=str(num1)
+        length1=len(str1)
+        str2=str(num2)
+        length2=len(str2)
+        str3=str(num3)
+        length3=len(str3)
+        if length1<4:
+            str1='0'*(4-length1)+str1
+        if length2<4:
+            str2='0'*(4-length2)+str2
+        if length3<4:
+            str3='0'*(4-length3)+str3
+        str4=''
+        for i in range(4):
+            min1=min(str1[i],str2[i],str3[i])
+            str4+=min1
+        str4=str4.lstrip('0')
+        if str4=='':
+            str4='0'
+        int1=int(str4)
+        return int1
