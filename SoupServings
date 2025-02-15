@@ -1,0 +1,18 @@
+class Solution:
+    def soupServings(self, n: int) -> float:
+        if n>=5000:
+            return 1.0
+        n=(n+24)//25
+        dict1={}
+        def dp(a,b):
+            if a<=0 and b<=0:
+                return 0.5
+            if a<=0:
+                return 1
+            if b<=0:
+                return 0
+            if (a,b) in dict1:
+                return dict1[(a,b)]
+            dict1[(a,b)]=0.25*(dp(a-4,b)+dp(a-3,b-1)+dp(a-2,b-2)+dp(a-1,b-3))
+            return dict1[(a,b)]
+        return dp(n,n)
