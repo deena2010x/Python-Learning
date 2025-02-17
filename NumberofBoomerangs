@@ -1,0 +1,14 @@
+class Solution:
+    def numberOfBoomerangs(self, points: List[List[int]]) -> int:
+        count=0
+        for i in points:
+            dict1=defaultdict(int)
+            for j in points:
+                if i==j:
+                    continue
+                x=i[0]-j[0] 
+                y=i[1]-j[1]
+                z=x*x+y*y
+                count+=dict1[z]*2
+                dict1[z]+=1
+        return count
