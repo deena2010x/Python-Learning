@@ -1,0 +1,12 @@
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+        arr=[]
+        stack=[(0,[])]
+        while stack:
+            start,path=stack.pop()
+            if start==len(s):
+                arr.append(path)
+            for end in range(start+1,len(s)+1):
+                if s[start:end]==s[start:end][::-1]:
+                    stack.append((end,path+[s[start:end]]))
+        return arr
