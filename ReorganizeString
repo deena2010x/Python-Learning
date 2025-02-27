@@ -1,0 +1,17 @@
+class Solution:
+    def reorganizeString(self, s: str) -> str:
+        length=len(s)
+        arr=collections.Counter(s)
+        max1,count=max(arr.items(),key=lambda x:x[1])
+        if count>(length+1)//2:
+            return ""
+        sort=sorted(arr.keys(),key=lambda x:-arr[x])
+        result=[""]*length
+        i=0
+        for j in sort:
+            for k in range(arr[j]):
+                result[i]=j
+                i+=2
+                if i>=length:
+                    i=1
+        return "".join(result)
