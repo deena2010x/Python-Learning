@@ -1,0 +1,13 @@
+class Solution:
+    def totalFruit(self, fruits: List[int]) -> int:
+        left,max1=0,0
+        basket={}
+        for right,i in enumerate(fruits):
+            basket[i]=basket.get(i,0)+1
+            while len(basket)>2:
+                basket[fruits[left]]-=1
+                if basket[fruits[left]]==0:
+                    del basket[fruits[left]]
+                left+=1
+            max1=max(max1,right-left+1)
+        return max1
