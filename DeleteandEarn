@@ -1,0 +1,11 @@
+class Solution:
+    def deleteAndEarn(self, nums: List[int]) -> int:
+        arr=collections.Counter(nums)  
+        max1=max(nums)    
+        dp=[0]*(max1+1)  
+        for i in arr:
+            dp[i]=i*arr[i]  
+        prev,curr=0,0
+        for i in dp:
+            prev,curr=curr,max(curr,prev+i)
+        return curr
