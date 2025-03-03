@@ -1,0 +1,18 @@
+class Solution:
+    def canAliceWin(self, nums: List[int]) -> bool:
+        arr1=[]
+        arr2=[]
+        for i in nums:
+            i=str(i)
+            length=len(i)
+            if length==1:
+                i=int(i)
+                arr1.append(i)
+            else:
+                i=int(i)
+                arr2.append(i)
+        sum1=sum(arr1)
+        sum2=sum(arr2)
+        if sum1!=sum2:
+            return True
+        return False
