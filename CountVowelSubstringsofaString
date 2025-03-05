@@ -1,0 +1,15 @@
+class Solution:
+    def countVowelSubstrings(self, word: str) -> int:
+        length=len(word)
+        vowels={'a','e','i','o','u'}
+        count=0
+        for i in range(length):
+            vowels1=set()
+            for j in range(i,length):
+                if word[j] in vowels:
+                    vowels1.add(word[j])
+                    if vowels1==vowels:
+                        count+=1
+                else:
+                    break
+        return count
