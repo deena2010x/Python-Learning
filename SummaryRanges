@@ -1,0 +1,19 @@
+class Solution:
+    def summaryRanges(self, nums: List[int]) -> List[str]:
+        length=len(nums)
+        arr=[]
+        x=False
+        count=0
+        for i in range(length):
+            if i<length-1 and nums[i]==nums[i+1]-1:
+                if not x:
+                    y=nums[i]
+                    x=True
+                count+=1
+            elif x:
+                arr.append(str(str(y)+"->"+str(y+count)))
+                x=False
+                count=0
+            else:
+                arr.append(str(nums[i]))
+        return arr
