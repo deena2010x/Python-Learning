@@ -1,0 +1,12 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        arr=s.split(" ")
+        length=len(arr)
+        str1=''
+        count=0
+        for i in arr:
+            str1+=i[::-1]
+            count+=1
+            if count<length:
+                str1+=' '
+        return str1
