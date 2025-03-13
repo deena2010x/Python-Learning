@@ -1,0 +1,12 @@
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        arr=[]
+        arr.append(0)
+        for i in range(n+1):
+            i=int(bin(i)[2:])
+            i=str(i)
+            arr1=collections.Counter(i)
+            for j,k in arr1.items():
+                if j=='1':
+                    arr.append(k)
+        return arr
