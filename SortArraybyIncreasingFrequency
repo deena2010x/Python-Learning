@@ -1,0 +1,5 @@
+class Solution:
+    def frequencySort(self, nums: List[int]) -> List[int]:
+        arr=collections.Counter(nums)
+        arr1=sorted(nums, key=lambda x: (arr[x], -x))
+        return arr1
