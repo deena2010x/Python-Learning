@@ -1,0 +1,10 @@
+class Solution:
+    def kthDistinct(self, arr: List[str], k: int) -> str:
+        arr1=collections.Counter(arr)
+        count=0
+        for i,j in arr1.items():
+            if j==1 and count<k:
+                count+=1
+                if count==k:
+                    return i
+        return ""
