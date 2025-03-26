@@ -1,0 +1,7 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        arr=collections.Counter(nums)
+        arr1=list(arr.keys())
+        length1=len(arr1)
+        nums[:length1]=arr1
+        return length1
