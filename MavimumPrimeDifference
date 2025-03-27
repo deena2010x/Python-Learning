@@ -1,0 +1,21 @@
+class Solution:
+    def isPrime(self, n: int) -> bool:
+        if n<2:
+            return False
+        for i in range(2,int(n**0.5)+1):
+            if n%i==0:
+                return False
+        return True
+    def maximumPrimeDifference(self, nums: List[int]) -> int:
+        length=len(nums)
+        first,last=-1,-1
+        for i in range(length):
+            if self.isPrime(nums[i]):
+                if first==-1:
+                    first=i
+                last=i
+        if first!=-1:
+            x=last-first 
+        else:
+            x=0
+        return x
