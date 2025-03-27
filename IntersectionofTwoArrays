@@ -1,0 +1,9 @@
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        arr1=collections.Counter(nums1)
+        arr2=collections.Counter(nums2)
+        set1=set(arr1.keys())
+        set2=set(arr2.keys())
+        set3=set1.intersection(set2)
+        arr3=list(set3)
+        return arr3
