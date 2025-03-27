@@ -1,0 +1,9 @@
+class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        arr1=edges[0]
+        arr2=edges[1]
+        set1=set(arr1)
+        set2=set(arr2)
+        set3=set1.intersection(set2)
+        arr3=list(set3)
+        return arr3[0]
