@@ -1,0 +1,22 @@
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        for i in range(9):
+            for j in range(9):
+                x=board[i][j]
+                if x!=".":
+                    arr1=board[i][:]
+                    arr1.remove(arr1[j])
+                    arr2=[]
+                    for k in range(9):
+                        arr2.append(board[k][j])
+                    arr2.remove(arr2[i])
+                    grid=[]
+                    row=(i//3)*3
+                    col=(j//3)*3
+                    for r in range(row,row+3):
+                        for c in range(col,col+3):
+                            if (r,c)!=(i,j):
+                                grid.append(board[r][c])
+                    if x in arr1 or x in arr2 or x in grid:
+                        return False
+        return True
