@@ -1,0 +1,15 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        while head and head.val==val:
+            head=head.next
+        x=head
+        while x and x.next:
+            if x.next.val==val:
+                x.next=x.next.next
+            else:
+                x=x.next
+        return head
