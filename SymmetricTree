@@ -1,0 +1,23 @@
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def symmetric(self,x,y):
+            if not x and not y:
+                return True
+            if not x or not y:
+                return False
+            a=x.val==y.val
+            b=self.symmetric(x.left,y.right)
+            c=self.symmetric(x.right,y.left)
+            if a and b and c:
+                return True
+            return False
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+        if self.symmetric(root.left,root.right):
+            return True
+        return False
