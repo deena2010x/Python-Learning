@@ -1,0 +1,19 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        dict1={}
+        s1=s.split()
+        length1=len(pattern)
+        length2=len(s1)
+        if length1!=length2:
+            return False
+        for i in range(length1):
+            x1=pattern[i]
+            x2=s1[i]
+            if x1 in dict1:
+                if dict1[x1]!=x2:
+                    return False
+            else:
+                if x2 in dict1.values():
+                    return False
+                dict1[x1]=x2
+        return True
