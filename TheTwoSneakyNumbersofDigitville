@@ -1,0 +1,8 @@
+class Solution:
+    def getSneakyNumbers(self, nums: List[int]) -> List[int]:
+        arr=collections.Counter(nums)
+        arr1=[]
+        for i,j in arr.items():
+            if j==2:
+                arr1.append(i)
+        return arr1
