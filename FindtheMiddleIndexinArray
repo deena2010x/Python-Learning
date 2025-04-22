@@ -1,0 +1,11 @@
+class Solution:
+    def findMiddleIndex(self, nums: List[int]) -> int:
+        length=len(nums)
+        for i in range(length):
+            arr1=nums[:i]
+            sum1=sum(arr1)
+            arr2=nums[i+1:]
+            sum2=sum(arr2)
+            if sum1==sum2:
+                return i
+        return -1
