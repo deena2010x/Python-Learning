@@ -1,0 +1,8 @@
+class Solution:
+    def reverseDegree(self, s: str) -> int:
+        length=len(s)
+        sum1=0
+        for i in range(length):
+            x=26-(ord(s[i])-ord('a'))
+            sum1+=x*(i+1)
+        return sum1
