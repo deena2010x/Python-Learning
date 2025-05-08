@@ -1,0 +1,10 @@
+class Solution:
+    def intersection(self, nums: List[List[int]]) -> List[int]:
+        length=len(nums)
+        set1=set(nums[0])
+        for i in range(1,length):
+            set2=set(nums[i])
+            set1=set1.intersection(set2)
+        arr=list(set1)
+        arr.sort()
+        return arr
