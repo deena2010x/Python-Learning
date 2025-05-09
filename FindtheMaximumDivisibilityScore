@@ -1,0 +1,13 @@
+class Solution:
+    def maxDivScore(self, nums: List[int], divisors: List[int]) -> int:
+        max1=-1
+        x=None
+        for i in divisors:
+            count=0
+            for j in nums:
+                if j%i==0:
+                    count+=1
+            if count>max1 or (count==max1 and (x is None or i<x)):
+                max1=count
+                x=i
+        return x
