@@ -1,0 +1,10 @@
+class Solution:
+    def maxProduct(self, n: int) -> int:
+        str1=str(n)
+        arr=[]
+        for i in str1:
+            int1=int(i)
+            arr.append(int1)
+        arr.sort()
+        x=arr[-1]*arr[-2]
+        return x
