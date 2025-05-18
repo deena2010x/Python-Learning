@@ -1,0 +1,22 @@
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        def f(ind: int, target: int) -> int:
+            if target==0:
+                return True
+            if ind==0:
+                return nums[0]==target
+            if dp[ind][target]!=-1:
+                return dp[ind][target]
+            nottake=f(ind-1,target)
+            take=False
+            if target>=nums[ind]:
+                take=f(ind-1,target-nums[ind])
+            dp[ind][target]=take or nottake
+            return dp[ind][target]
+        n=len(nums)
+        sum1=sum(nums)
+        if sum1%2!=0:
+            return False
+        target=sum1//2
+        dp=[[-1]*(target+1) for i in range(n)]
+        return f(n-1,target)
