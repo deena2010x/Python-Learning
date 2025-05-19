@@ -1,0 +1,23 @@
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        def f(ind: int, T: int) -> int:
+            if ind==0:
+                if T%coins[ind]==0:
+                    return T//coins[ind]
+                else:
+                    return float('inf')
+            if dp[ind][T]!=-1:
+                return dp[ind][T]
+            nottake=f(ind-1,T)
+            take=float('inf')
+            if coins[ind]<=T:
+                take=1+f(ind,T-coins[ind])
+            dp[ind][T]=min(take,nottake)
+            return dp[ind][T]
+        n=len(coins)
+        dp=[[-1]*(amount+1) for i in range(n)]
+        x=f(n-1,amount)
+        if x!=float('inf'):
+            return x
+        else:
+            return -1
