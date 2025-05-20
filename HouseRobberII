@@ -1,0 +1,21 @@
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        def f(i: int,nums: List[int], dp: List[int]) -> int:
+            if i==0:
+                dp[i]=nums[i]
+            if i<0:
+                return 0
+            if dp[i]!=-1:
+                return dp[i]
+            pick=nums[i]+f(i-2,nums,dp)
+            notpick=f(i-1,nums,dp)
+            dp[i]=max(pick,notpick)
+            return dp[i]
+        n=len(nums)
+        if n==1:
+            return nums[0]
+        dp1=[-1]*(n-1)
+        max1=f(n-2,nums,dp1)
+        dp2=[-1]*(n-1)
+        max2=f(n-2,nums[1:],dp2)
+        return max(max1,max2)
